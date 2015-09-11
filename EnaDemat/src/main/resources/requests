@@ -1,0 +1,4 @@
+http://localhost:8080/saveUser?nom=Thiam&prenom=Ngagne&email=ngagne.thiam@adie.sn&profil=Administrateur&phone=+221777162478&login=admin&password=passer&fonction=adminhttp://localhost:8080/saveOrg?codeOrganisation=codeOrg1&libelle=organisation1&type=typeOrg1
+http://localhost:8080/saveOrg?codeOrganisation=codeOrg2&libelle=organisation2&type=typeOrg2&subOrganisation=codeOrg1
+localhost:8080/saveFunction?codeFonction=admin&libelle=Fonction%20Administrateur&url=/admin&organisation=codeOrg1
+localhost:8080/saveFunction?codeFonction=comrecept&libelle=Comité%20de%20réception&url=/comrecept&organisation=codeOrg1
