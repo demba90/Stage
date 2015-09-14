@@ -18,7 +18,7 @@ public class Organisation implements Serializable{
 	private String libelle;
 	private String type;
 	private Collection<Fonction> fonctions;
-	private Organisation subOrganisation;
+	private Organisation organisationSup;
 
 	public Organisation() {
 		super();
@@ -57,14 +57,16 @@ public class Organisation implements Serializable{
 	public void setFonctions(Collection<Fonction> fonctions) {
 		this.fonctions = fonctions;
 	}
-	@ManyToOne
-	@JoinColumn(name="codeSubOrg")
-	public Organisation getSubOrganisation() {
-		return subOrganisation;
-	}
 	
-	public void setSubOrganisation(Organisation subOrganisation) {
-		this.subOrganisation = subOrganisation;
+	@ManyToOne
+	@JoinColumn(name="codeOrgSup")
+	public Organisation getOrganisationSup() {
+		return organisationSup;
 	}
 
+	public void setOrganisationSup(Organisation organisationSup) {
+		this.organisationSup = organisationSup;
+	}
+	
+	
 }

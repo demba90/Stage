@@ -54,9 +54,10 @@ public class ApplicationController {
 	public List<Fonction> getAllFunctions(){
 		return fonctionRepository.findAll();
 	}
-	@RequestMapping(value="/allOrganisation")
+	@RequestMapping(value="/allOrganisations")
 	public List<Organisation> getAllOrganisations(){
 		return organisationRepository.findAll();
 	}
+	
 	
 }
