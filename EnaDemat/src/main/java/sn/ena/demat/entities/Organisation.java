@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,7 +18,6 @@ public class Organisation implements Serializable{
 	private String codeOrganisation;
 	private String libelle;
 	private String type;
-	private Collection<Fonction> fonctions;
 	private Organisation organisationSup;
 
 	public Organisation() {
@@ -49,16 +49,8 @@ public class Organisation implements Serializable{
 		this.type = type;
 	}
 
-	@OneToMany(mappedBy="organisation")
-	public Collection<Fonction> getFonctions() {
-		return fonctions;
-	}
-
-	public void setFonctions(Collection<Fonction> fonctions) {
-		this.fonctions = fonctions;
-	}
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="codeOrgSup")
 	public Organisation getOrganisationSup() {
 		return organisationSup;

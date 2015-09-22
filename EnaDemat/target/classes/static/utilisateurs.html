@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EnaDemat | Les utilisateurs</title>
+
+
+</head>
+<body ng-app="EnaDemat" ng-controller="EnaDematController">
+	<table border="1">
+		<thead>
+			<th>Prénom</th><th>Nom</th><th>Email</th><th>Code Fonction</th><th>Code Organisation</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="u in utilisateurs">
+				<td>{{u.prenom}}</td>
+				<td>{{u.nom}}</td>
+				<td>{{u.email}}</td>
+				<td>{{u.fonction.codeFonction}}</td>
+				<td>{{u.fonction.organisation.codeOrganisation}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript" src="angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

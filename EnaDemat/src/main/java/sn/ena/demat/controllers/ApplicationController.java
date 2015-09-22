@@ -54,10 +54,27 @@ public class ApplicationController {
 	public List<Fonction> getAllFunctions(){
 		return fonctionRepository.findAll();
 	}
-	@RequestMapping(value="/allOrganisations")
-	public List<Organisation> getAllOrganisations(){
-		return organisationRepository.findAll();
+	
+	@RequestMapping(value="/allFunctionsByOrganisation")
+	public List<Fonction> getAllFunctionsByOrg(Organisation org){
+		return fonctionRepository.findAllFunctionsByOrg(org.getCodeOrganisation());
 	}
 	
+	@RequestMapping(value="/allOrganisations")
+	public List<Organisation> getAllOrganisations(){
+		return organisationRepository.findAllOrganisation();
+	}
 	
+	@RequestMapping(value="/searchUser")
+	public Utilisateur searchUser(String q){
+		return utilisateurRepository.findUtilisateurByMc("%"+q+"%");
+	}
+	@RequestMapping(value="/updateUser")
+	public Utilisateur updateUser(Utilisateur user){
+		return utilisateurRepository.saveAndFlush(user);
+	}
+	@RequestMapping(value="/allFunctionsByUser")
+	public List<Fonction> getAllFunctionsByUser(Fonction f){
+		return utilisateurRepository.findFonctionByUser(f.getCodeFonction());
+	}
 }

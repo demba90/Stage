@@ -1,54 +1,40 @@
 package sn.ena.demat.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="fonctions")
-public class Fonction implements Serializable{
-
-	private String codeFonction;
+@Table(name="procedures")
+public class Procedure implements Serializable{
+	
+	private String codeProcedure;
 	private String libelle;
-	private String url;
-
-
+	
 	private Organisation organisation;
-
-	public Fonction(){
+	
+	public Procedure() {
 		super();
 	}
-
 	@Id
-	public String getCodeFonction() {
-		return codeFonction;
+	public String getCodeProcedure() {
+		return codeProcedure;
 	}
-	public void setCodeFonction(String codeFonction) {
-		this.codeFonction = codeFonction;
+	public void setCodeProcedure(String codeProcedure) {
+		this.codeProcedure = codeProcedure;
 	}
-
-
+	
 	public String getLibelle() {
 		return libelle;
 	}
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
+	
 	@ManyToOne
 	@JoinColumn(name="codeOrganisation")
 	public Organisation getOrganisation() {
@@ -57,5 +43,5 @@ public class Fonction implements Serializable{
 	public void setOrganisation(Organisation organisation) {
 		this.organisation = organisation;
 	}
-
+	
 }
